@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Category -E-Cart</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="https://code.jquery./jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">    <div class="logo">E-Cart</div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="category.html" class="active">Categories</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+<!-- Filters -->
+<div class="filters">
+  <div class="filter-section">
+    <h3>Category</h3>
+    <ul>
+      <li><a href="category.html?category=electronics">Electronics</a></li>
+      <li><a href="category.html?category=fashion">Fashion</a></li>
+      <li><a href="category.html?category=home">Home</a></li>
+    </ul>
+  </div>
+
+  <!-- Price Range (unchanged) -->
+  <div class="filter-section">
+    <h3>Price Range</h3>
+    <input type="range" min="0" max="10000" value="5000" id="priceRange" />
+    <span id="priceValue">₹5000</span>
+  </div>
+</div>
+
+
+
+  <!-- Category Info -->
+  <main class="category-page">
+    <section class="category-header">
+      <img src="assests/electronics banner.jpeg" alt="Electronics Category" class="category-banner"/>
+      <div class="category-details">
+        <h1>Electronics</h1>
+        <p>Discover the latest in electronic & smart appliance technology. Shop smartphones, laptops, headphones, and more.</p>
+      </div>
+    </section>
+
+    <!-- Category Products -->
+    <section class="product-grid">
+      <div class="product-card">
+        <img src="assests/product 2.jpeg" alt="Product 1" />
+        <h3>Smartphone X</h3>
+        <p>₹54,999</p>
+        <a href="product-view.html" class="btn">View</a>
+      </div>
+      <div class="product-card">
+        <img src="assests/product 1.jpeg" alt="Product 2" />
+        <h3>Wireless Earbuds</h3>
+        <p>₹2,499</p>
+        <a href="product-view.html" class="btn">View</a>
+      </div>
+      <div class="product-card">
+        <img src="assests/product 5.webp" alt="Product 3" />
+        <h3>Powerbank"</h3>
+        <p>₹3000</p>
+        <a href="product-view.html" class="btn">View</a>
+      </div>
+    </section>
+  </main>
+  <main class="category-page">
+    <section class="category-header">
+      <img src="assests/fashion.jpeg" alt="Fashion Category" class="category-banner"/>
+      <div class="category-details">
+        <h1>Fashion</h1>
+        <p>Discover the latest in fashion collections like Kurthas,saree,jeans,shirts and more.</p>
+      </div>
+    </section>
+    <!-- Category Products -->
+    <section class="product-grid">
+      <div class="product-card">
+        <img src="assests/chappal.jpeg" alt="Product 1" />
+        <h3>chappal</h3>
+        <p>₹499</p>
+        <a href="product-view.html" class="btn">View</a>
+      </div>
+      <div class="product-card">
+        <img src="assests/jeans.jpeg" alt="Product 2" />
+        <h3>jeans</h3>
+        <p>₹699</p>
+        <a href="product-view.html" class="btn">View</a>
+      </div>
+      <div class="product-card">
+        <img src="assests/tshirst.jpeg" alt="Product 3" />
+        <h3>tshirts"</h3>
+        <p>₹450</p>
+        <a href="product-view.html" class="btn">View</a>
+      </div>
+    </section>
+  </main>
+  <!-- Category Info -->
+  <main class="category-page">
+    <section class="category-header">
+      <img src="assests/home appliences.jpeg" alt="Home Category" class="category-banner"/>
+      <div class="category-details">
+        <h1>Home</h1>
+        <p>Discover the latest in home appliences  Shop Tv,AC,mixy and more.</p>
+      </div>
+    </section>
+
+    <!-- Category Products -->
+    <section class="product-grid">
+      <div class="product-card">
+        <img src="assests/knife.jpeg" alt="Product 1" />
+        <h3>knife</h3>
+        <p>₹200</p>
+        <a href="product-view.html" class="btn">View</a>
+      </div>
+      <div class="product-card">
+        <img src="assests/induction.jpeg" alt="Product 2" />
+        <h3>induction</h3>
+        <p>₹14000</p>
+        <a href="product-view.html" class="btn">View</a>
+      </div>
+      <div class="product-card">
+        <img src="assests/heater.jpeg" alt="Product 3" />
+        <h3>heater"</h3>
+        <p>₹30000</p>
+        <a href="product-view.html" class="btn">View</a>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 E-Cart. All rights reserved.</p>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scrollToTop">↑</button>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

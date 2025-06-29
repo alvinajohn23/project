@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - iStudio E-commerce</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">E-Cart</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="category.html">Categories</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <!-- Sliders -->
+  <section class="slider">
+    <div class="slide active">Welcome to E-Cart</div>
+    <div class="slide">Shop Best Deals</div>
+    <div class="slide">New Arrivals</div>
+  </section>
+
+  <!-- Shop by Category -->
+  <section class="categories">
+    <div class="category-grid">
+  <a href="products.html?category=electronics" class="category">Electronics</a>
+  <a href="products.html?category=fashion" class="category">Fashion</a>
+  <a href="products.html?category=home" class="category">Home</a>
+</div>
+
+    <h2>Shop by Category</h2>
+    <div class="category-grid">
+      <div class="category">Electronics
+        <img src="assests/electronics.jpeg" alt="Electronics" class="homepage-image">
+
+      </div>
+      <div class="category">Fashion
+        <img src="assests/fasion.jpeg" alt="Fashion" class="homepage-image">
+
+      </div>
+      <div class="category">Home
+        <img src="assests/home.jpeg" alt="Home" class="homepage-image" height="150" width="200">
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Products -->
+   <section class="latest-products">
+  <h2>Latest Products</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="assests/product 1.jpeg" alt="EarBuds" />
+      <h3>EarBuds</h3>
+      <p>₹2001</p>
+    </div>
+    <!-- more products -->
+  </div>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="assests/product 2.jpeg" alt="IQOO 9pro" />
+      <h3>Smartphone </h3>
+      <p>₹54,999</p>
+    </div>
+    <!-- more products -->
+  </div>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="assests/product 3.jpeg" alt="Table fan" />
+      <h3>Table fan</h3>
+      <p>₹10000</p>
+    </div>
+    <!-- more products -->
+  </div>
+</section>
+
+
+  <!-- Features -->
+  <section class="features">
+    <div class="feature">Fast Delivery</div>
+    <div class="feature">Secure Payments</div>
+    <div class="feature">24x7 Support</div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 E-Cart. All rights reserved.</p>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scrollToTop">↑</button>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

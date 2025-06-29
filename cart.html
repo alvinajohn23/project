@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart - E-Cart</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">iStudio</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="category.html">Categories</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html" class="active">Cart</a>
+    </nav>
+  </header>
+
+  <!-- Cart Section -->
+  <main class="cart-page">
+    <h1>Your Shopping Cart</h1>
+
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="assests/product 2.jpeg" alt="Product" class="cart-img"/></td>
+          <td>Smartphone X</td>
+          <td>₹54999</td>
+          <td><input type="number" value="1" min="1" class="qty-input"/></td>
+          <td>₹54999</td>
+          <td><button class="btn remove-btn">Remove</button></td>
+        </tr>
+        <tr>
+          <td><img src="assests/product 1.jpeg" alt="Product" class="cart-img"/></td>
+          <td>Wireless Earbuds</td>
+          <td>₹2001</td>
+          <td><input type="number" value="2" min="1" class="qty-input"/></td>
+          <td>₹2001</td>
+          <td><button class="btn remove-btn">Remove</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Total Summary -->
+    <div class="cart-summary">
+      <h2>Total: ₹19997</h2>
+      <a href="checkout.html" class="btn checkout-btn" onclick="saveCartToLocalStorage()">Proceed to Checkout</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 E-Cart. All rights reserved.</p>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scrollToTop">↑</button>
+
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
+  <script>
+    // Update item total and overall total when quantity changes
+    $(".qty-input").on("input", function () {
+      const row = $(this).closest("tr");
+      const price = parseFloat(row.find("td:nth-child(3)").text().replace("₹", ""));
+      const qty = parseInt($(this).val());
+      const total = price * qty;
+      row.find("td:nth-child(5)").text("₹" + total.toLocaleString());
+
+      // Update overall total
+      updateTotal();
+    });
+
+    // Remove item
+    $(".remove-btn").on("click", function () {
+      $(this).closest("tr").remove();
+      updateTotal();
+    });
+
+    // Recalculate total
+    function updateTotal() {
+      let grandTotal = 0;
+      $(".cart-table tbody tr").each(function () {
+        const rowTotal = parseFloat($(this).find("td:nth-child(5)").text().replace("₹", "").replace(",", ""));
+        grandTotal += rowTotal;
+      });
+      $(".cart-summary h2").text("Total: ₹" + grandTotal.toLocaleString());
+    }
+
+    // Save cart to localStorage for checkout
+    function saveCartToLocalStorage() {
+      const items = [];
+      $(".cart-table tbody tr").each(function () {
+        const title = $(this).find("td:nth-child(2)").text();
+        const price = parseFloat($(this).find("td:nth-child(3)").text().replace("₹", ""));
+        const qty = parseInt($(this).find(".qty-input").val());
+        const total = price * qty;
+        items.push({ title, price, qty, total });
+      });
+      localStorage.setItem("checkoutItems", JSON.stringify(items));
+    }
+  </script>
+</body>
+</html>

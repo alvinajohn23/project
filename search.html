@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Results - iStudio</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">iStudio</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="category.html">Categories</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <!-- Search Section -->
+  <main class="search-page">
+    <h1>Search Products</h1>
+    
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search for products..." />
+      <button id="searchBtn" class="btn">Search</button>
+    </div>
+
+    <!-- Search Results -->
+    <section class="product-grid" id="searchResults">
+      <!-- Sample Product -->
+      <div class="product-card">
+        <img src="assets/product1.jpg" alt="Product 1" />
+        <h3>Smartphone X</h3>
+        <p>₹14,999</p>
+        <a href="product-view.html" class="btn">View</a>
+      </div>
+      <div class="product-card">
+        <img src="assets/product2.jpg" alt="Product 2" />
+        <h3>Wireless Earbuds</h3>
+        <p>₹2,499</p>
+        <a href="product-view.html" class="btn">View</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 iStudio. All rights reserved.</p>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scrollToTop">↑</button>
+
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
+  <script>
+    // Placeholder for search functionality
+    $("#searchBtn").on("click", function () {
+      const query = $("#searchInput").val().trim().toLowerCase();
+      if (query === "") {
+        alert("Please enter a search term.");
+        return;
+      }
+      alert("Showing results for: " + query);
+      // You can add logic to dynamically filter products from data if using JSON
+    });
+  </script>
+</body>
+</html>

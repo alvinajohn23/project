@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - iStudio</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">iStudio</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="category.html">Categories</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <main class="contact-page">
+    <h1>Contact Us</h1>
+
+    <!-- Contact Info -->
+    <section class="contact-info">
+      <p><strong>Email:</strong> support@istudio.com</p>
+      <p><strong>Phone:</strong> +91 98765 43210</p>
+      <p><strong>Address:</strong> 123 E-Commerce Street, Tech City, India</p>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+      <h2>Send us a message</h2>
+      <form id="contactForm" novalidate>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit" class="btn">Submit</button>
+        <p id="formMessage" class="form-message"></p>
+      </form>
+    </section>
+  </main>
+ 
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 E-Cart. All rights reserved.</p>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scrollToTop">↑</button>
+
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
+
+  <!-- Inline Validation Script (if not in scripts.js) -->
+  <script>
+    $("#contactForm").on("submit", function (e) {
+      e.preventDefault();
+
+      const name = $("#name").val().trim();
+      const email = $("#email").val().trim();
+      const message = $("#message").val().trim();
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
+
+      if (!name || !email || !message) {
+        $("#formMessage").text("Please fill out all fields.").css("color", "red");
+      } else if (!email.match(emailPattern)) {
+        $("#formMessage").text("Please enter a valid email address.").css("color", "red");
+      } else {
+        $("#formMessage").text("Message sent! We'll get back to you soon.").css("color", "green");
+        $("#contactForm")[0].reset();
+      }
+    });
+  </script>
+</body>
+</html>

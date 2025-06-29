@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout - iStudio</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">iStudio</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="category.html">Categories</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <!-- Checkout Section -->
+  <main class="checkout-page">
+    <h1>Checkout</h1>
+
+    <div class="checkout-container">
+      
+      <!-- Shipping Form -->
+      <section class="shipping-form">
+        <h2>Shipping Information</h2>
+        <form action="order-confirmation.html" method="POST" id="shippingForm">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required />
+
+          <label for="address">Address</label>
+          <textarea id="address" name="address" required></textarea>
+
+          <label for="zip">ZIP Code</label>
+          <input type="text" id="zip" name="zip" required />
+
+          <button type="submit" class="btn place-order">Place Order</button>
+        </form>
+      </section>
+
+      <!-- Order Summary -->
+      <section class="order-summary">
+        <h2>Order Summary</h2>
+        <ul id="summaryList">
+          <!-- JavaScript will populate this -->
+        </ul>
+        <hr />
+        <h3 id="totalAmount">Total: ₹0</h3>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 iStudio. All rights reserved.</p>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scrollToTop">↑</button>
+
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
+</body>
+</html>

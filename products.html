@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products - E-Cart</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">E-Cart</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="category.html">Categories</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="products-page">
+    <h1>All Products</h1>
+
+    <!-- Filters -->
+    <div class="filters">
+      <div class="filter-section">
+        <h3>Category</h3>
+        <ul>
+          <li><input type="checkbox"> Electronics</li>
+          <li><input type="checkbox"> Fashion</li>
+          <li><input type="checkbox"> Home</li>
+        </ul>
+      </div>
+
+      <div class="filter-section">
+        <h3>Price Range</h3>
+        <input type="range" min="0" max="10000" value="5000" id="priceRange" />
+        <span id="priceValue">₹5000</span>
+      </div>
+    </div>
+
+    <!-- Product List -->
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="assests/product 1.jpeg" alt="Product 1" />
+        <h3>EarBuds</h3>
+        <p>2001</p>
+        <a href="product-view.html" class="btn">View</a>
+      </div>
+      <div class="product-card">
+        <img src="assests/product 2.jpeg" alt="Product 2" />
+        <h3>IQOO 9pro</h3>
+        <p>₹54999</p>
+        <a href="product-view.html" class="btn">View</a>
+      </div>
+      
+      <div class="product-card">
+        <img src="assests/product 3.jpeg" alt="Product 2" />
+        <h3>Table fan</h3>
+        <p>₹10000</p>
+        <a href="product-view.html" class="btn">View</a>
+      </div>
+      <div class="product-card">
+        <img src="assests/product 4.jpeg" alt="Product 2" />
+        <h3>Shoes</h3>
+        <p>₹899</p>
+        <a href="product-view.html" class="btn">View</a>
+      </div>
+      <div class="product-card">
+        <img src="assests/product 5.webp" alt="Product 2" />
+        <h3>powerbank</h3>
+        <p>₹30000</p>
+        <a href="product-view.html" class="btn">View</a>
+      </div>
+      <div class="product-card">
+        <img src="assests/product 6.jpeg" alt="Product 2" />
+        <h3>Books</h3>
+        <p>₹499</p>
+        <a href="product-view.html" class="btn">View</a>
+      </div>
+
+      
+    </div>
+    
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 E-Cart. All rights reserved.</p>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scrollToTop">↑</button>
+
+  <script src="scripts.js"></script>
+  <script>
+    $('#priceRange').on('input', function() {
+      $('#priceValue').text('₹' + $(this).val());
+    });
+  </script>
+
+</body>
+</html>
